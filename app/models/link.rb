@@ -11,6 +11,6 @@ class Links
 
 end
 
-DataMapper.setup(:default, "postgres://localhost/bookmark_manger_test")
+DataMapper.setup(:default, "postgres://localhost/bookmark_manager_test")
 DataMapper.finalize
 DataMapper.auto_upgrade!
