@@ -2,7 +2,7 @@ feature 'See a list of links on the homepage' do
 
   scenario 'Homepage should contain a list of all saved links' do
 
-    Links.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
+    Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
 
     visit('/links')
 

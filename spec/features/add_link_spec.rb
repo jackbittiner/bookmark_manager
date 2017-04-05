@@ -27,7 +27,7 @@ feature "Add site's address and title to the manager" do
     click_button 'Add link'
     expect(current_path).to eq '/links'
     within 'ul#links' do
-      link = Links.first
+      link = Link.first
       expect(link.tags.map(&:name)).to include('Sexy Lit')
     end
   end
