@@ -27,4 +27,19 @@ class BookmarkManager < Sinatra::Base
     link.save
     redirect('/links')
   end
+
+  post '/tags/bubbles' do
+    session[:filter_tag] = params[:filter_tag]
+    redirect('/tags/bubbles')
+
+  end
+
+  get '/tags/bubbles' do
+    links = Links.all
+    tag = session[:filter_tag]
+    @links = links.select{ |link| link unless link.tags.include?(tag) }
+
+    erb :'links/filtered_results'
+  end
+
 end
