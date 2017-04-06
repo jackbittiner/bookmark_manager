@@ -8,4 +8,8 @@ feature 'signing up users' do
     expect(User.first.email).to eq('happyfriends@treehouse.com')
 
   end
+
+  scenario 'mismatching password and password confirmation' do
+    expect { signup(password_confirmation: 'BANANAS!!*&%@*£^%@!')}.not_to change(User, :count)
+  end
 end

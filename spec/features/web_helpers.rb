@@ -6,9 +6,12 @@ def add_database_entry_with_tag
   click_button 'Add link'
 end
 
-def signup
+def signup(email: 'happyfriends@treehouse.com',
+          password: 'password1234',
+          password_confirmation: 'password1234')
   visit('/users/new')
-  fill_in 'email', with: 'happyfriends@treehouse.com'
-  fill_in 'password', with: 'password1234'
+  fill_in :email, with: email
+  fill_in :password, with: password
+  fill_in :password_confirmation, with: password_confirmation
   click_button 'submit'
 end
