@@ -16,6 +16,11 @@ describe User do
       non_authenticated_user = User.authenticate(user.email, "oasihfoaisf")
       expect(non_authenticated_user).to be_nil
     end
+  end
 
+  describe '#generate_token' do
+    it 'saves a password recovery token when we generate a token' do
+      expect { user.generate_token }.to change{ user.password_token }
+    end
   end
 end
