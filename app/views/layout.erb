@@ -8,9 +8,9 @@
     <% if current_user %>
       Welcome, <%= current_user.email %>
     <% end %>
-    <% if flash[:notice] %>
-      <div id='notice'><%= flash[:notice] %></div>
-    <% end %>  
+    <% if flash[:errors] && !flash[:errors].empty? %>
+      <div id='errors'><%= flash[:errors] %></div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
