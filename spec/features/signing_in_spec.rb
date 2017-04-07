@@ -11,7 +11,7 @@ feature 'signing in' do
   end
 
 
-  scenario 'unsuccessful sign in' do
+  xscenario 'unsuccessful sign in' do
     signup
     visit '/sessions/new'
     fill_in 'email', with: 'happyfriends@treehouse.com'
