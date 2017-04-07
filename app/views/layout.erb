@@ -18,8 +18,7 @@
       </div>
     <% end %>
     <% if (flash[:errors] && !flash[:errors].empty?) %>
-    <!-- Please fix the following errors: -->
-      <!-- <%= flash[:notice] %> -->
+    Please fix the following errors:
       <ul id='errors'>
         <% flash[:errors].each do |error| %>
           <li> <%= error %> </li>

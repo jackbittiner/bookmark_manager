@@ -11,13 +11,13 @@ feature 'signing in' do
   end
 
 
-  xscenario 'unsuccessful sign in' do
+  scenario 'unsuccessful sign in' do
     signup
     visit '/sessions/new'
     fill_in 'email', with: 'happyfriends@treehouse.com'
     fill_in 'password', with: 'password4321'
     click_button 'Log In'
-    expect(current_path).to eq '/sessions/new'
+    expect(current_path).to eq '/sessions'
     expect(page).to have_content 'The email or password is incorrect'
   end
 end
