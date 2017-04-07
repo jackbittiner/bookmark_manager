@@ -10,8 +10,8 @@ module SessionHelpers
     click_button 'submit'
   end
 
-  def login(email:, password:)
-    visit '/session/new'
+  def login(email: 'happyfriends@treehouse.com', password: 'password1234')
+    visit '/sessions/new'
     fill_in :email, with: email
     fill_in :password, with: password
     click_button 'Log In'
